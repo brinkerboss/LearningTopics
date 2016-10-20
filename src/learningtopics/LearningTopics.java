@@ -12,10 +12,11 @@ import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.HashMap;
 
-import org.quickconnectfamily.json.JSONException;
-import org.quickconnectfamily.json.JSONInputStream;
-import org.quickconnectfamily.json.JSONOutputStream;
-import org.quickconnectfamily.json.JSONUtilities;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -29,5 +30,10 @@ public class LearningTopics {
     public static void main(String[] args) {
         // TODO code application logic here
     }
+    
+    String Guitars = "";
+    HashMap<String, Object> data;
+    ArrayList<GuitarBean> stringBeans = new ArrayList<GuitarBean>();
+    
     
 }
