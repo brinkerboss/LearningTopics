@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 
 
 
@@ -32,8 +33,22 @@ public class LearningTopics {
     }
     
     String Guitars = "";
-    HashMap<String, Object> data;
+    Map<String, Object> guitarData = new HashMap<>();
     ArrayList<GuitarBean> stringBeans = new ArrayList<GuitarBean>();
+
+    public LearningTopics() {
+    }
     
-    
+     public void runHttp() {
+	// Somewhere in your code this is called in a
+	// thread which is not the user interface thread
+
+	try {
+	    // Set the URL object to point to the JSON file
+	    URL url = new URL("http://cwcraigo.com/stockfeed.php?Guitars="+this.Guitars);
+            
+        } catch (Exception e) {
+	    e.printStackTrace();
+     }
+     }
 }
