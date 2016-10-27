@@ -27,16 +27,16 @@ public class LearningTopics {
 	
 
 	try {
-	    // Set the URL object to point to the JSON file
+	    // create a URL object that points to the JSON on my website
 	    URL url = new URL("http://jordanbrinkerhoff.net/guitars.php?Guitars="+this.Guitars);
             
-              // Connect to the site using HttpURLConnecton
+              // connect using HttpURLConnecton
 	    HttpURLConnection connect = (HttpURLConnection) url.openConnection();
 
-	    // Setup input stream using JSONInputStream to easily retrieve data
+	    // setup input stream using JSONInputStream 
 	    JSONInputStream jsonInput = new JSONInputStream(connect.getInputStream());
 
-	    // Get the JSON object as a HashMap
+	    // get the JSON object as a HashMap
 	    setData((HashMap<String, Object>) jsonInput.readObject());
             
             HashMap<String, String> map = new HashMap<String,String>();
