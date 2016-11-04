@@ -2,6 +2,8 @@ package concurrency;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,8 +21,11 @@ public class Concurrency {
         
         new Thread(runnable).start();
         
+        ExecutorService executor = Executors.newCachedThreadPool();
         
-        thread.start();
+        
+        executor.execute(runnable);
+        
         try {
         for (int i = 0; i < iterations; i++) {
             
